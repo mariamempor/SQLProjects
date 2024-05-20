@@ -1,0 +1,33 @@
+create database psc;
+show databases;
+use psc;
+create table if not exists Aluno(
+id_aluno int auto_increment primary key,
+nome_aluno varchar(30) not null,
+email_aluno varchar(30) not null,
+ra_aluno varchar (10) not null,
+altura decimal(3,2) not null,
+nacionalidade varchar(30) default 'Brasileiro'
+);
+alter table aluno add column telefone varchar(30);
+describe aluno;
+alter table aluno drop column columntelefone; 
+insert into aluno(nome_aluno, email_aluno, ra_aluno, altura, nacionalidade, telefone) values ("Eduarda", "eduarda@gmail.com", "123456", 1.70, default, "1187654");
+insert into aluno(nome_aluno, email_aluno, ra_aluno, altura, nacionalidade, telefone) values ("Ronaldo", "ronaldo@gmail.com", "145678", 1.56, "Chileno", "1187654");
+insert into aluno(nome_aluno, email_aluno, ra_aluno, altura, nacionalidade, telefone) values ("Adele", "adele@gmail.com", "187678", 1.76, "argentino", "1187654");
+insert into aluno(nome_aluno, email_aluno, ra_aluno, altura, nacionalidade, telefone) values ("Caio", "caio@gmail.com", "145548", 1.83, default, "1187654");
+select * from aluno;
+
+table if not exists professor(
+id_professor int auto_increment primary key, 
+nome_professor varchar(30) not null,
+idade_professor varchar (2) not null,
+email_professor decimal(3,2) not null
+); 
+show tables;
+insert into professor(nome_professor, idade_professor, email_professor) values ("Danilo", "30", "danilo@gmail.com");
+alter table professor drop column email_professor;
+alter table professor add column email_professor varchar(30) not null;
+insert into professor(nome_professor, idade_professor, email_professor) values ("Denise", "35", "denise@gmail.com");
+describe professor;
+select * from professor;
